@@ -122,7 +122,7 @@ public class ResolutionFeature extends CameraFeature<ResolutionPreset> {
         EncoderProfiles.VideoProfile defaultVideoProfile = videoProfiles.get(0);
 
         return new Size(defaultVideoProfile.getWidth(), defaultVideoProfile.getHeight());
-      } catch (Exception e) {
+      } catch (Throwable e) {
         @SuppressWarnings("deprecation")
         CamcorderProfile profile =
                 getBestAvailableCamcorderProfileForResolutionPresetLegacy(cameraId, preset);
@@ -250,7 +250,7 @@ public class ResolutionFeature extends CameraFeature<ResolutionPreset> {
 
         EncoderProfiles.VideoProfile defaultVideoProfile = videoProfiles.get(0);
         captureSize = new Size(defaultVideoProfile.getWidth(), defaultVideoProfile.getHeight());
-      } catch (Exception e) {
+      } catch (Throwable e) {
         @SuppressWarnings("deprecation")
         CamcorderProfile camcorderProfile =
                 getBestAvailableCamcorderProfileForResolutionPresetLegacy(cameraId, resolutionPreset);
